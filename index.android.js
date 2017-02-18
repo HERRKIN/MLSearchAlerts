@@ -5,26 +5,38 @@
  */
 
 import React, { Component } from 'react';
+// import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base';
 import {
   AppRegistry,
   StyleSheet,
-  ScrollView,
   Image,
   Text,
+  TextInput,
+  Button,
   View
-} from 'react-native';
+} from 'react-native'
 
 export default class inicio extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {text: ''}
+  }
   render() {
     return (
-      <ScrollView>
-  <Image source={{uri: 'https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAdjAAAAJDk1MDdjNWNkLWZlNzItNGRiYy1iMDY0LTM4OWFlN2VhYjEzNQ.jpg'}} style={{width: 100, height: 100}} />
-  <Text>
-    Probando React Native, con una imagen de saecosoft en android:D
-    a ver que tal funciona con el cel. 
-  </Text>
-</ScrollView>
-    )
+      <View style={styles.container}>
+        <Image source={{uri: 'https://openclipart.org/image/2400px/svg_to_png/185356/1382519138.png'}} style={{width: 100, height: 100}} />
+        <TextInput
+          placeholder='Busca algo'
+        style={{marginTop: 10, height: 40, width: 200}}
+        onChangeText={(text) => this.setState({text})}
+        value={this.state.text}
+      />
+      <Button
+        // onPress={onPressLearnMore}
+        title='Buscar'
+        color='gray'
+        accessibilityLabel='Learn more about this purple button' />
+      </View>)
   }
 }
 
