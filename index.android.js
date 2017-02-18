@@ -5,33 +5,47 @@
  */
 
 import React, { Component } from 'react';
-// import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon } from 'native-base';
+import {Container, Content, Form, Item, Input, Icon} from 'native-base'
 import {
   AppRegistry,
-  // StyleSheet,
-  // Navigator,
-  // Image,
-  // Text,
-  // TextInput,
-  // Button,
-  View
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Button
 } from 'react-native'
-
-import {Home} from './Components'
-
-
+import {Home} from './Components/'
 export default class inicio extends Component {
+
   constructor (props) {
     super(props)
-    this.state = {text: ''}
+    // this.state={text:''}
   }
   render() {
     return (
-              <Home />
-            )
+    <Home />
+    );
   }
 }
 
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'yellow',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
 
 AppRegistry.registerComponent('inicio', () => inicio);
